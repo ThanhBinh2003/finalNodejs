@@ -21,7 +21,7 @@ const roleAuth = (req, res, next) => {
       });
   } else {
     // Nếu không có người dùng, từ chối truy cập
-    return res.status(401).json({ code: 3, message: 'Unauthorized. Please log in' });
+    return res.redirect('/users/login')
   }
 };
 

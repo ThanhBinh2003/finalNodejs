@@ -2,30 +2,19 @@ const jwt = require('jsonwebtoken')
 
 module.exports = (req,res,next)=>{
 
-    let authorization = req.header('Authorization') 
-   
-    if (!authorization)
-    {
-        return res.status(401)
-        .json({code:101,message:'Token is missing'})
-    }
-
-    let token = authorization.split(' ')[1]
+    let token = req.cookies.token
     if (!token)
     {
-        return res.status(401)
-        .json({code:101,message:'Invalid Token'})
+        return res.redirect('users/login')
+
     }
     
     const {JWT_SECRET} = process.env
 
-    
-
     jwt.verify(token,JWT_SECRET,(err,data)=>{
         if (err)
         {
-            return res.status(401)
-            .json({code:101,message:'Invalid Token/Token Expired'})
+            return res.redirect('users/login')
         }
         req.user = data
         next();

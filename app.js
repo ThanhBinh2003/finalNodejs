@@ -2,15 +2,21 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+var path = require('path')
 const flash = require('express-flash')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 
 const app = express()
 
-const route = require('./routers')
-
+// view engine setup
+// app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','ejs')
+
+const route = require('./routers')
+const a = express.static(__dirname + '/public')
+
+app.use(express.static(__dirname + '/public')) 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 app.use(cors())
@@ -18,20 +24,13 @@ app.use(cookieParser('12345'))
 app.use(session({cookie: { maxAge: 60000 }}))
 app.use(flash())
 
-app.get('/',(req,res)=>{
-    res.json({code:0,message:'success'})
-    
-    //views here 
-    //
-    //return res.status(200).render('views-here')
-})
+
 
 // [route]
-
+route(app)   
 // app.use('/products',pRouter)
 // app.use('/orders',oRouter)
 // app.use('/users',uRouter)
-route(app)
 
 app.all('*',(req,res)=>{
     //views here 

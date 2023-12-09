@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>RC-POS - Profile</title>
+    <title>RC-POS - Inventory Reports</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet">
@@ -116,7 +116,7 @@
             <i class="fa fa-fw fa-bar-chart"></i>
             <span>Sales Reports</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="inventory-reports.html">
             <i class="fa fa-fw fa-tags"></i>
             <span>Inventory Reports</span></a>
@@ -201,12 +201,224 @@
               <li class="breadcrumb-item">
                 <a href="index.html">Home</a>
               </li>
-              <li class="breadcrumb-item active">Profile</li>
+              <li class="breadcrumb-item active">Inventory Reports</li>
             </ol>
             <!-- Page Content -->
-            <h1>Blank Page</h1>
-            <hr>
-            <p>This is a great starting point for new custom pages.</p>
+            <!-- DataTables Example -->
+            <div class="card mb-3">
+              <div class="card-header bg-primary text-white">
+                <i class="fa fa-table"></i>
+                Inventory Records
+                <a href="#" class="text-white" data-toggle="modal" data-target="#addProductModal">
+                  <span class="float-right">
+                    <i class="fa fa-plus"></i>
+                    Add New Products
+                  </span>
+                </a>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>SKU</th>
+                        <th>Product Type</th>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Cost/item</th>
+                        <th>Stock Worth</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>SKU</th>
+                        <th>Product Type</th>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Cost/item</th>
+                        <th>Stock Worth</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                      <tr>
+                        <td>AUDMICM20</td>
+                        <td>Headphones & MICs</td>
+                        <td>Audionic MIC AM-20</td>
+                        <td class="text-danger">03</td>
+                        <td>Rs2100</td>
+                        <td>Rs6300</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+
+            <p class="small text-center text-muted my-5">
+              <em>More table examples coming soon...</em>
+            </p>
+
           </div>
           <br><br><br>
           <!-- Sticky Footer -->

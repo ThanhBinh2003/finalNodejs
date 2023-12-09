@@ -1,6 +1,6 @@
 const express = require('express')
 const Router = express.Router()
-require('dotenv').config();
+require('dotenv').config()
 const {validationResult} = require('express-validator')
 const roleAuth = require('../auth/roleAuth')
 const registerValidator = require('./Validator/registerValidator')

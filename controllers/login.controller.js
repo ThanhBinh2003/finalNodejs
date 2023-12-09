@@ -1,6 +1,8 @@
+require('dotenv').config()
 const express = require('express')
 const Router = express.Router()
 const {validationResult} = require('express-validator')
+const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const salt = 10
 
@@ -27,7 +29,7 @@ class Login {
     getlogin(req, res) {
         const error = req.flash('error')
         const username = req.flash('username')
-        res.render('signin', {error, username})
+        res.render('authentication/login', {error, username})
     }
 
     //[post]/login
@@ -48,11 +50,19 @@ class Login {
                 bcrypt.compare(password, data.password).then(function(result) {
                 if(result) {
                     delete data.password
-                    req.session.user = data
-                    // const token = generateAccessToken({userEmail: email})
-                    // console.log(token)
-                    // res.send({token})
-                    return res.redirect('/')
+                    const {JWT_SECRET} = process.env
+
+                    jwt.sign({
+                        username: data.username,
+                        role: data.role
+                    }, JWT_SECRET,{
+                        expiresIn: '1h'
+                    }, (err, token) => {
+                        if (err) throw err
+                        //[SUCCESS]
+                        res.cookie('token', token, {maxAge: 60 * 60 * 1000})
+                        return res.redirect('/')
+                    })
                 }
                 else {
                     req.flash('error', 'Wrong username or wrong password!')
@@ -71,7 +81,7 @@ class Login {
                 break;
             }
 
-            const {email, password} = req.body 
+            // const {email, password} = req.body 
             
             req.flash('error', message)
             // req.flash('name', name)
